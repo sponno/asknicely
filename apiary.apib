@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://app.asknice.ly
+HOST: http://app.asknice.ly/api
 
 # AskNicely
 Subscribe a person and or trigger a survey question to them.
@@ -10,12 +10,18 @@ A single person
 
 ### Create a Person [POST]
 + Request (application/json)
+    + Headers
 
-        { "name": "John Smith", "email":"john@example.com", "segments":"pro,subscriber","mycustomid":12 }
+        X-My-Request-Header: 42
+    
+    + Body
+        
+        { "name": "John Smith", "email":"john@example.com", "segments":"pro,subscriber","mycustom_id":12, dashboard:"recommend", "triggeremail":false }
+      
 
 + Response 201 (application/json)
 
-        { "success":true,"msg":"added"}
+        {id:12, "success":true,"msg":"added", emailed:false}
 
 ## Note [/notes/{id}]
 A single Note object with all its details
