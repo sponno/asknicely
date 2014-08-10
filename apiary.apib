@@ -2,20 +2,12 @@ FORMAT: 1A
 HOST: http://api.asknice.ly
 
 # AskNicely
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+Subscribe a person and or trigger a survey question to them.
 
 # Group Notes
 Notes related resources of the **Notes API**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
 
 ### Create a Note [POST]
 + Request (application/json)
@@ -45,3 +37,15 @@ A single Note object with all its details
 
 ### Remove a Note [DELETE]
 + Response 204
+
+
+NA
+## Notes Collection [/notes]
+### List all Notes [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
