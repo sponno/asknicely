@@ -4,21 +4,18 @@ HOST: http://api.asknice.ly
 # AskNicely
 Subscribe a person and or trigger a survey question to them.
 
-# Group Notes
-Notes related resources of the **Notes API**
-
 
 ## Note [/person/add]
-A single Note object with all its details
+A single person
 
-### Create a Note [POST]
+### Create a Person [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { "name": "John Smith", "email":"john@example.com", "segments":"pro,subscriber","mycustomid":12 }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        { "success":true,"msg":"added"}
 
 ## Note [/notes/{id}]
 A single Note object with all its details
