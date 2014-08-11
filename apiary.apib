@@ -9,12 +9,10 @@ Subscribe a person and or trigger a survey question to them.
 Add or update a single person. 
 
 1. Name is firstname + lastname, email is required.
-2. Segments (optional, default is general). Values are comma seperated.
-3. Any field that does not match (segments, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. 
+2. segment (optional, add simple metadata about a persont that will be displayed within Ask Nicely dashboards). 
+3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. 
 4. triggeremail means we will email the question for this dashboard immediatly if "true".
 5. "forcesubject" optional value (will override the email's default subject set in settings to your custom subject"
-
-
 
 ### Create a Person [POST]
 + Request (application/json)
