@@ -30,18 +30,18 @@ Add or update a single person.
         {id:12, "success":true,"msg":"added", emailed:false}
 
 
-## Note [/person/{id}]
-A single Note object with all its details
+## Person [/person/{id}]
+Get a single person
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required,  `12`) ... Numeric `id` of the person we want to view.
 
 ### Retrieve a Note [GET]
 + Response 200 (application/json)
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 12, "name": "John Smith", "email":"john@example.com" }
 
 
 
