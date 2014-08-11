@@ -22,7 +22,7 @@ Add or update a single person.
             X-apikey: demo
     + Body
         
-            { "name": "John Smith", "email":"john@example.com", "dashboard":"recommend", "triggeremail":false, "segment":"pro","mycustom_id":12 }
+            { "name": "John Smith", "email":"john@example.com", "dashboard":"recommend", "triggeremail":false, "segment":"pro","mycustom_id":102 }
       
 
 + Response 201 (application/json)
@@ -30,13 +30,14 @@ Add or update a single person.
         {id:12, "success":true,"msg":"added", emailed:false}
 
 
-## Person [/person/{id}]
+## Person [/person/{id}/{key}]
 Get a single person
 
 + Parameters
     + id (required,  `12`) ... Numeric `id` of the person we want to view.
+    + key (optional, string,  `mycustom_id`) ... Instead of using the Ask Nicely key, specify your own custom feild.
 
-### Retrieve a Note [GET]
+### View a Person [GET]
 + Response 200 (application/json)
 
     + Body
@@ -47,8 +48,8 @@ Get a single person
 
 
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Responses Collection [/respones/{since_id}]
+### List all Responses [GET]
 + Response 200 (application/json)
 
         [{
