@@ -5,18 +5,25 @@ HOST: http://app.asknice.ly/api
 Subscribe a person and or trigger a survey question to them.
 
 
-## Note [/person/add]
-A single person
+## Person [/person/add]
+Add or update a single person. 
+
+1. Name is firstname + lastname, email is required.
+2. Segments (optional, default is general). Values are comma seperated.
+3. Any field that does not match (segments, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. 
+4. triggeremail means we will email the question for this dashboard immediatly if "true".
+
+
+
 
 ### Create a Person [POST]
 + Request (application/json)
     + Headers
-
-            X-My-Request-Header: 42
     
+            X-apikey: demo
     + Body
         
-            { "name": "John Smith", "email":"john@example.com", "segments":"pro,subscriber","mycustom_id":12, dashboard:"recommend", "triggeremail":false }
+            { "name": "John Smith", "email":"john@example.com", dashboard:"recommend", "triggeremail":false, "segments":"pro,subscriber","mycustom_id":12 }
       
 
 + Response 201 (application/json)
@@ -32,16 +39,11 @@ A single Note object with all its details
 ### Retrieve a Note [GET]
 + Response 200 (application/json)
 
-    + Header
-
-            X-My-Header: The Value
-
     + Body
 
             { "id": 2, "title": "Pick-up posters from post-office" }
 
-### Remove a Note [DELETE]
-+ Response 204
+
 
 
 
