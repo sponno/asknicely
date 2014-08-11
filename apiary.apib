@@ -11,11 +11,14 @@ Add or update a single person.
 1. email is required and cannot be left. Name or firstname is desired. 
 2. segment (optional, add a keyword about a person that will be displayed within Ask Nicely dashboards). 
 3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. 
-4. triggeremail means we will email the question for this dashboard immediatly if "true".
-5. "forcesubject" optional value (will override the email's default subject set in settings to your custom subject"
+4. triggeremail, true = send survey email now, false = store this person. 
+5. "forcesubject" (optional). Create a one time subject for just this email. 
 
 ### Create a Person [POST]
 + Request (application/json)
+    + Parameters
+        + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    
     + Headers
     
             X-apikey: demo
