@@ -50,8 +50,8 @@ Get a single person
 
 ## Responses Collection [/respones/{pagesize}/{pagenumber}/{since_id}]
 + Parameters
-    + pagesize (required, number, 50) ... Numeric `id` of the person we want to view.
-    + pagenumber (required, number, `1`) ... Instead of using the Ask Nicely key, specify your own custom feild.
+    + pagesize (required, number,50) ... How many records to return per request, max 1000, default 50
+    + pagenumber (required, number, `1`) ... Current page starting at 1, being the first page.
     + since_id (optional, number, `0`) ... Instead of using the Ask Nicely key, specify your own custom feild.
 
 ### List all Responses [GET]
