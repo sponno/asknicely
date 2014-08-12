@@ -48,12 +48,26 @@ Get a single person
 
 
 
-## Responses Collection [/respones/{since_id}]
+## Responses Collection [/respones/{pagesize}/{pagenumber}/{since_id}]
 ### List all Responses [GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
+        {
+            "success":true,
+            "pagesize":50,
+            "pagenumber":1,
+            "total":500,
+            "totalpages"10,
+            "data":
+            [{
+              "id": 1, "title": "Jogging in park"
+            }, {
+              "id": 2, "title": "Pick-up posters from post-office"
+            }]
+        }
+
+
+
+
+
+
