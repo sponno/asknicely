@@ -34,8 +34,8 @@ Add or update a single person, or an array of people.
         {id:12, "success":true,"msg":"added", emailed:false}
 
 
-## Person [/person/{id}/{key}]
-Get a single person
+## Person [/person/add/{id}/{key}]
+Get the details of a single person. Use an Ask Nicely id, or the id of a custom field.
 
 + Parameters
     + id (required,  `12`) ... Numeric `id` of the person we want to view.
@@ -52,6 +52,27 @@ Get a single person
     + Body
 
             { "id": 12, "name": "John Smith", "email":"john@example.com" }
+
+
+## Person [/person/remove/{id}/{key}]
+Removes a person from Ask Nicely, any answers and comments will remain, but they will never be emailed again (unless you add them again).
+
++ Parameters
+    + id (required,  `12`) ... Numeric `id` of the person we want to view.
+    + key (optional, string,  `mycustom_id`) ... Instead of using the Ask Nicely key, specify your own custom feild.
+
+### View a Person [GET]
++ Response 200 (application/json)
+    
+    + Headers
+    
+            X-apikey: your_apikey
+            X-domainkey: your_domainkey
+
+    + Body
+
+            { "id": 12, "success": true, "msg":"removed" }
+
 
 
 
