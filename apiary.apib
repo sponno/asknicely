@@ -19,8 +19,9 @@ Add or update a single person, or an array of people.
 
     + Headers
     
-            X-apikey: yourapikey
-            X-domainkey: yourapikey
+            X-apikey: your_apikey
+            X-domainkey: your_domainkey
+            
     + Body
         
             [
@@ -42,6 +43,11 @@ Get a single person
 
 ### View a Person [GET]
 + Response 200 (application/json)
+    
+    + Headers
+    
+            X-apikey: your_apikey
+            X-domainkey: your_domainkey
 
     + Body
 
@@ -52,6 +58,7 @@ Get a single person
 
 
 ## Responses Collection [/respones/{pagesize}/{pagenumber}/{since_id}/{format}]
+
 + Parameters
     + pagesize (required, number,`50`) ... How many records to return per request, max 1000, default 50
     + pagenumber (required, number, `1`) ... Current page starting at 1, being the first page.
