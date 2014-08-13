@@ -8,11 +8,11 @@ Subscribe a person and or trigger a survey question to them.
 ## Person [/person/add]
 Add or update a single person, or an array of people.
 
-1. email is required and cannot be left. Name or firstname is desired. 
-2. segment (optional, add a keyword about a person that will be displayed within Ask Nicely dashboards). 
-3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. 
-4. triggeremail, true = send survey email now, false = store this person. 
-5. "forcesubject" (optional). Create a one time subject for just this email. 
+1. email is required and cannot be missing. Name or firstname is desired but you can leave this blank. 
+2. segment (optional, add a keyword about a person that will be displayed within Ask Nicely dashboards, can be used for filtering and alerts). 
+3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. Custom fields are save with "_c" append to the name to prevent Ask Nicely name clashes.
+4. triggeremail, true = send survey email now & store, false = just store person.
+5. "forcesubject" (optional). Create a one time subject just for this email. 
 
 ### Create a Person [POST]
 + Request (application/json)
@@ -35,7 +35,7 @@ Add or update a single person, or an array of people.
 
 
 ## Person [/person/get/{id}/{key}]
-Get the details of a single person. Use an Ask Nicely id, or the id of a custom field.
+Get the details of a single person. Use an Ask Nicely id, or the id of a custom field with the custom feild key. 
 
 + Parameters
     + id (required,  `12`) ... Numeric `id` of the person we want to view.
@@ -98,9 +98,9 @@ Download the latest responses
             "totalpages"10,
             "data":
             [{
-              "id": 1, "title": "Jogging in park"
+              "id": 1, "email": "john@example.com"
             }, {
-              "id": 2, "title": "Pick-up posters from post-office"
+              "id": 2, "email": "jane@example.com"
             }]
         }
 
