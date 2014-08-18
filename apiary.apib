@@ -78,7 +78,10 @@ Removes a person from Ask Nicely, any answers and comments will remain, but they
 
 ## Responses Collection [/responses/{sort}/{pagesize}/{pagenumber}/{since_id}/{format}]
 Download the latest responses
++ Headers
 
+        X-apikey: your_apikey
+        X-domainkey: your_domainkey
 
 + Parameters
     + sort (required, string,`desc`) ... Sort the results, default latest first "desc" or "asc"
