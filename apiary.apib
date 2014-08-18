@@ -78,17 +78,18 @@ Removes a person from Ask Nicely, any answers and comments will remain, but they
 
 ## Responses Collection [/responses/{sort}/{pagesize}/{pagenumber}/{since_id}/{format}]
 Download the latest responses
-+ Headers
-
-        X-apikey: your_apikey
-        X-domainkey: your_domainkey
-
-+ Parameters
-    + sort (required, string,`desc`) ... Sort the results, default latest first "desc" or "asc"
-    + pagesize (required, number,`50`) ... How many records to return per request, max 1000, default 50
-    + pagenumber (required, number, `1`) ... Current page starting at 1, being the first page.
-    + since_id (optional, number, `0`) ... Pass in the very last Ask Nicely Response id that you have downloaded (use 0 for everything). 
-    + format (optional, string, `json`) ... Return all data back as json or use "csv" for a csv file (including headers). 
++ Request 
+    + Headers
+    
+            X-apikey: your_apikey
+            X-domainkey: your_domainkey
+    
+    + Parameters
+        + sort (required, string,`desc`) ... Sort the results, default latest first "desc" or "asc"
+        + pagesize (required, number,`50`) ... How many records to return per request, max 1000, default 50
+        + pagenumber (required, number, `1`) ... Current page starting at 1, being the first page.
+        + since_id (optional, number, `0`) ... Pass in the very last Ask Nicely Response id that you have downloaded (use 0 for everything). 
+        + format (optional, string, `json`) ... Return all data back as json or use "csv" for a csv file (including headers). 
 
 ### List all Responses [GET]
 + Response 200 (application/json)
