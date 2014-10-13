@@ -5,7 +5,7 @@ HOST: http://app.asknice.ly/api/v1
 Subscribe a person and or trigger a survey question to them.
 
 
-## Person [/person/add]
+## Add a Person [/person/add]
 Add or update a single person, or an array of people.
 
 1. email is required and cannot be missing. Name or firstname is desired but you can leave this blank. 
@@ -14,7 +14,7 @@ Add or update a single person, or an array of people.
 4. triggeremail, true = send survey email now & store, false = just store person.
 5. "forcesubject" (optional). Create a one time subject just for this email. 
 
-### Create a Person [POST]
+### Add a Person [POST]
 + Request (application/json)
 
     + Headers
@@ -34,14 +34,14 @@ Add or update a single person, or an array of people.
         {id:12, "success":true,"msg":"added", emailed:false}
 
 
-## Person [/person/get/{id}/{key}]
+## Get a Person [/person/get/{id}/{key}]
 Get the details of a single person. Use an Ask Nicely id, or the id of a custom field with the custom feild key. 
 
 + Parameters
     + id (required,  `12`) ... Numeric `id` of the person we want to view.
     + key (optional, string,  `mycustom_id`) ... Instead of using the Ask Nicely key, specify your own custom feild.
 
-### View a Person [GET]
+### Get a Person [GET]
 + Response 200 (application/json)
     
     + Headers
@@ -54,14 +54,14 @@ Get the details of a single person. Use an Ask Nicely id, or the id of a custom 
             { "id": 12, "name": "John Smith", "email":"john@example.com" }
 
 
-## Person [/person/remove/{id}/{key}]
+## Remove a Person [/person/remove/{id}/{key}]
 Removes a person from Ask Nicely, any answers and comments will remain, but they will never be emailed again (unless you add them again).
 
 + Parameters
     + id (required,  `12`) ... Numeric `id` of the person we want to view.
     + key (optional, string,  `mycustom_id`) ... Instead of using the Ask Nicely key, specify your own custom feild.
 
-### View a Person [GET]
+### Remove a Person [GET]
 + Response 200 (application/json)
     
     + Headers
@@ -76,9 +76,8 @@ Removes a person from Ask Nicely, any answers and comments will remain, but they
 
 
 
-## Responses Collection [/responses/{sort}/{pagesize}/{pagenumber}/{since_id}/{format}]
+## Responses [/responses/{sort}/{pagesize}/{pagenumber}/{since_id}/{format}]
 Download the latest responses
-
 
 + Parameters
     + sort (required, string,`desc`) ... Sort the results, default latest first "desc" or "asc"
