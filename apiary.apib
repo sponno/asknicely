@@ -2,17 +2,29 @@ FORMAT: 1A
 HOST: http://app.asknice.ly/api/v1
 
 # AskNicely
-Subscribe a person and or trigger a survey question to them.
+To get started you will need your AskNicely API key and a domain key.
+Login to your AskNicely account. Click on the settings (cog icon top right)
+Accounts / API > Select which account you want to use for API calls. > Show API Key.
+
+You will need to both the API key and domain key.
+
+All requests (whether or not documented) require that you send these details in the Header eg (X-apikey, X-domainkey).
+
+Key features of the AskNicely API.
+1. Add or subscribe a person or several people to the mailing list
+2. Unsubscribe a person from AskNicley
+3. Trigger an email to person added, or existing user
+4. Get a list of all responses and customer data
 
 
 ## Add a Person [/person/add]
 Add or update a single person, or an array of people.
 
 1. email is required and cannot be missing. Name or firstname is desired but you can leave this blank. 
-2. segment (optional, add a keyword about a person that will be displayed within Ask Nicely dashboards, can be used for filtering and alerts). 
-3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. Custom fields are save with "_c" append to the name to prevent Ask Nicely name clashes.
+2. segment (optional, add a keyword about a person that will be displayed within AskNicely dashboard, can be used for filtering and alerts). 
+3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. Custom fields are save with "_c" append to the name to prevent AskNicely name clashes.
 4. triggeremail, true = send survey email now & store, false = just store person.
-5. "forcesubject" (optional). Create a one time subject just for this email. 
+5. "forcesubject" (optional). Create a one time subject just for this email. We highly recommend you personalise the subject with the firstname. eg "Hi John, a quick question".
 
 ### Add a Person [POST]
 + Request (application/json)
@@ -78,6 +90,7 @@ Removes a person from Ask Nicely, any answers and comments will remain, but they
 
 ## Responses [/responses/{sort}/{pagesize}/{pagenumber}/{since_id}/{format}]
 Download the latest responses
+
 
 + Parameters
     + sort (required, string,`desc`) ... Sort the results, default latest first "desc" or "asc"
