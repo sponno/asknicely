@@ -24,16 +24,16 @@ Add or update a single person, or an array of people.
 1. email is required and cannot be missing. Name or firstname is desired but you can leave this blank. 
 2. segment (optional, add a keyword about a person that will be displayed within AskNicely dashboard, can be used for filtering and alerts). 
 3. Any field that does not match (segment, email, name, firstname, lastname) will be added as a custom field. Use this to store additional data about a person. Custom fields are savef with "_c" append to the name to prevent AskNicely name clashes.
-4. triggeremail, true = send survey email now & store, false = just store person.
+4. obeyrules, true = this will check if this customer has been contacted before based on your contract rules. 
 5. "forcesubject" (optional). Create a one time subject just for this email. We highly recommend you personalise the subject with the firstname. eg "Hi John, a quick question".
 
 Triggering Emails
 
-1. Send a payload with the following fields: email, dashboard, triggeremail:true
+1. Send a payload with the following fields: email, dashboard, obeyrules:true
 2. This will email john@example.com (any custom data for john will not be deleted eg Segment).
 
 eg 
-{"email":"john@example.com", "dashboard":"recommend", "triggeremail":true}
+{"email":"john@example.com", "dashboard":"recommend", "obeyrules":true}
 
 
 ### Add a Person & Trigger [POST]
@@ -47,13 +47,13 @@ eg
     + Body
         
             [
-                { "name": "John Smith", "email":"john@example.com", "dashboard":"recommend", "triggeremail":false, "segment":"pro","mycustom_id":102 }
+                { "name": "John Smith", "email":"john@example.com", "dashboard":"recommend", "obeyrules":true, "segment":"pro","mycustom_id":102 }
             ]
       
 
 + Response 201 (application/json)
 
-        {id:12, "success":true,"msg":"added", emailed:false}
+        {id:12, "success":true,"msg":"added", emailed:true}
 
 
 
