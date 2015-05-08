@@ -135,7 +135,23 @@ Download the latest responses
                 }]
             }
 
+## Get NPS [/getnps/{days}]
+Get your current NPS score for the last 30 days.
 
++ Parameters
+    + days (optional, numeric) ... Specify a different period
+
+### Remove a Person [POST]
++ Response 200 (application/json)
+    
+    + Headers
+    
+            X-apikey: your_apikey
+            X-domainkey: your_domainkey
+
+    + Body
+
+            { "nps": 44 }
 
 
 
